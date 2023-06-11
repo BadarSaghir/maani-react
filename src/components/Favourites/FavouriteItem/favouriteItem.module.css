@@ -8,7 +8,11 @@
     font-size: 1rem;
     font-weight: bold;
 }
-
+.star-rating-box{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 15px;
+}
 .favourites-items-container{
     display: flex;
     overflow: auto;

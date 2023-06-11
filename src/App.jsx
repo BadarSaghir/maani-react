@@ -10,16 +10,15 @@ import { Footer } from "./components/Footer/Footer";
 import Favourites from "./components/Favourites/Favourites";
 import FavouritiesContext from "./contexts/favouritesContext";
  const App = () => {
-//  const theme="" 
- const theme=useContext(ThemeContext)
- const {isOpen}=useContext(FavouritiesContext)
 
-// console.log(theme)'
+ const theme=useContext(ThemeContext)
+ const {isOpen,setIsOpen}=useContext(FavouritiesContext)
+
 
 
   return (
     <div className={themes.dark===theme.theme ?style.darkMode+' '+style.body:style.body} style={{height:"100%", width:'100%'}}>
-      <Navbar />
+      <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Banner {...bannerConstants} />
       <Footer/>
       <Favourites show={isOpen}/>

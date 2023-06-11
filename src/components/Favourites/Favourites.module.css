@@ -1,5 +1,8 @@
 
 
+
+
+
 .favourites-items-container{
     display: flex;
     overflow: auto;
@@ -26,6 +29,7 @@
 .favourites-section{
     background-color: var(--bg_default);
     width: 100%;
+    display:  inline-block;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -57,5 +61,6 @@
     padding-top: 8px;
     padding-bottom: 8px;
 }
+
 
 

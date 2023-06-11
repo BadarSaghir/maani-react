@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { IconButton } from "../IconButton/IconButton";
 
 import style from "./Navabar.module.css";
@@ -7,11 +8,10 @@ import { HiOutlineMoon } from "react-icons/hi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
 import { themes } from "../../constant/theme";
-import FavouritiesContext from "../../contexts/favouritesContext";
-import { useContext } from "react";
-const Navbar = () => {
+
+const Navbar = ({isOpen="",setIsOpen=()=>{}}) => {
   const { handleTheme, theme } = useThemeChanger();
-  const {isOpen,setIsOpen}=useContext(FavouritiesContext)
+  
   const [isHover, setIsHover] = useState(false);
 
   return (

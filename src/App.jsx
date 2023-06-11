@@ -15,13 +15,10 @@ import FavouritiesContext from "./contexts/favouritesContext";
  const {isOpen}=useContext(FavouritiesContext)
 
 // console.log(theme)'
-useEffect(()=>{
-  console.log(theme)
 
-},[theme])
 
   return (
-    <div className={themes.dark===theme.theme ?style.darkMode:''}>
+    <div className={themes.dark===theme.theme ?style.darkMode+' '+style.body:style.body} style={{height:"100%", width:'100%'}}>
       <Navbar />
       <Banner {...bannerConstants} />
       <Footer/>

@@ -35,6 +35,14 @@ h3, h4, h5, h6, p{
 section {
   display: block;
 }
+.darkMode{
+    --bg_default:#1A1A1A !important;
+    --bg_body:#282828 !important;
+    --lines-color:#000000 !important;
+    --body-text:#EDEDED !important;
+    --heart-color:#DC143C !important;
+  }
+  
 body{
   font-family: Nunito-Sans;
   background-color: var(--bg_body);
@@ -42,28 +50,3 @@ body{
   transition: background-color, ease-in .5s;
 }
 
-@keyframes favourites-rolling-up-animation{
-  0%{
-      transform: translateY(175px);
-  }
-  100%{
-      transform: translateY(0);
-  }
-}
-
-@keyframes favourites-rolling-down-animation{
-  0%{
-      transform: translateY(0);
-  }
-  100%{
-      transform: translateY(175px);
-  }
-}
-
-.favourites-animation-forward{
-  animation: favourites-rolling-up-animation forwards .5s ease-in;
-}
-
-.favourites-animation-reverse{
-  animation: favourites-rolling-down-animation forwards .5s ease-in;
-}

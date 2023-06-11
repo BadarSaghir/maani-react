@@ -6,3 +6,10 @@
     --heart-color:#DC143C !important;
   }
   
+
+  .body{
+    font-family: Nunito-Sans;
+    background-color: var(--bg_body);
+    line-height: normal; 
+    transition: background-color, ease-in .5s;
+  }

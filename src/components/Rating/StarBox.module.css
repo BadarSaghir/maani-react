@@ -1,0 +1,5 @@
+.star-rating-box{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 15px;
+}

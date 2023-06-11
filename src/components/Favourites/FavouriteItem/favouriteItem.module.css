@@ -1,23 +1,13 @@
 
-.favourites-items{
-    height: 160px;
-}
 
-.favourites-items h3{
-    /* padding: 0 0 12px 0; */
-    font-size: 1rem;
-    font-weight: bold;
-}
 .star-rating-box{
     display: flex;
     flex-flow: row nowrap;
     margin-bottom: 15px;
 }
-.favourites-items-container{
-    display: flex;
-    overflow: auto;
-    padding-top: 8px;
-    padding-bottom: 8px;
+
+.container{
+    padding-inline:4%;
 }
 
 .favourites-item{

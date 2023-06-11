@@ -2,6 +2,7 @@
 import RatingStar from "../../Rating/RatingStar";
 import style from "./favouriteItem.module.css";
 // eslint-disable-next-line react/prop-types
+import StartBox from "../../Rating/StarBox";
 export const FavouriteItem = ({
   title = "Cloud Computing",
   image = { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
@@ -15,7 +16,7 @@ export const FavouriteItem = ({
       </div>
       <div className={`${style["favourite-card-details-container"]}`}>
         <h5>{title}</h5>
-        <div className={`${style["star-rating-box"]}`}>
+        <StartBox >
           {Array.from(Array(totalStars), (_, i) => {
             // console.log('index',i,i<startRating);
             //1>2>3>4>5
@@ -23,7 +24,7 @@ export const FavouriteItem = ({
               <RatingStar key={i} isNotRatted={i < startRating?false:true} />
             );
           })}
-        </div>
+        </StartBox>
       </div>
     </div>
   );

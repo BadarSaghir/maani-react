@@ -6,7 +6,7 @@ export const useThemeChanger = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   useEffect(() => {
       
-  })
+  },[theme])
   function handleTheme(previousTheme) {
     return () => {
         console.log(previousTheme)

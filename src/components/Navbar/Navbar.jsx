@@ -12,7 +12,6 @@ import { useContext } from "react";
 const Navbar = () => {
   const { handleTheme, theme } = useThemeChanger();
   const {isOpen,setIsOpen}=useContext(FavouritiesContext)
-  const [isActive, setIsActive] = useState(isOpen);
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -55,7 +54,7 @@ const Navbar = () => {
               text={favouriteButton.label}
               icon={
                 <span style={{ height: 16, margin: 4 }}>
-                  {isActive || isHover ? (
+                  {isOpen || isHover ? (
                     <AiFillHeart
                       className={`${style.modeIcon} ${style.heartFill} `}
                       height={"100%"}
@@ -71,7 +70,6 @@ const Navbar = () => {
                 </span>
               }
               onclick={() => {
-                setIsActive((state) => !state);
                 setIsOpen(!isOpen);
               }}
             />

@@ -6,6 +6,7 @@ import useThemeChanger from "../../hooks/useThemeChanger";
 import { HiOutlineMoon } from "react-icons/hi";
 import { AiOutlineHeart,AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
+import { themes } from "../../constant/theme";
 const Navbar = () => {
   const { handleTheme, theme } = useThemeChanger();
   const [isActive, setIsActive] = useState(false);
@@ -45,8 +46,9 @@ const Navbar = () => {
             })}
             
             <IconButton
-              id={style.btn}
+              id={themes.light==theme?style.btn:''}
               setHover={setIsHover}
+              ignoreCss={true}
               text={favouriteButton.label}
               icon={
                 <span style={{ height: 16, margin: 4 }}>

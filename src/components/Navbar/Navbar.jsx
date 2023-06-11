@@ -7,9 +7,12 @@ import { HiOutlineMoon } from "react-icons/hi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
 import { themes } from "../../constant/theme";
+import FavouritiesContext from "../../contexts/favouritesContext";
+import { useContext } from "react";
 const Navbar = () => {
   const { handleTheme, theme } = useThemeChanger();
-  const [isActive, setIsActive] = useState(false);
+  const {isOpen,setIsOpen}=useContext(FavouritiesContext)
+  const [isActive, setIsActive] = useState(isOpen);
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -69,6 +72,7 @@ const Navbar = () => {
               }
               onclick={() => {
                 setIsActive((state) => !state);
+                setIsOpen(!isOpen);
               }}
             />
           </div>

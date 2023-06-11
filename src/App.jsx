@@ -8,9 +8,12 @@ import {ThemeContext} from "./contexts/themeContext"
 import Banner from "./components/Banner/Banner";
 import { Footer } from "./components/Footer/Footer";
 import Favourites from "./components/Favourites/Favourites";
+import FavouritiesContext from "./contexts/favouritesContext";
  const App = () => {
 //  const theme="" 
  const theme=useContext(ThemeContext)
+ const {isOpen}=useContext(FavouritiesContext)
+
 // console.log(theme)'
 useEffect(()=>{
   console.log(theme)
@@ -22,7 +25,7 @@ useEffect(()=>{
       <Navbar />
       <Banner {...bannerConstants} />
       <Footer/>
-      <Favourites />
+      <Favourites show={isOpen}/>
     </div>
   );
 };

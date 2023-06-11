@@ -13,7 +13,7 @@ useEffect(()=>{
 },[theme])
 
   return (
-    <div className={themes.dark==theme.theme ?style.darkMode:''}>
+    <div className={themes.dark===theme.theme ?style.darkMode:''}>
       <Navbar />
     </div>
   );

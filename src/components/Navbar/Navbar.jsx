@@ -1,10 +1,11 @@
-import { useContext } from "react";
+
 import { IconButton } from "../IconButton/IconButton";
-import {ThemeContext} from "../../contexts/themeContext"
 import style from "./Navabar.module.css";
 import {NavThemeButton} from "../../constant/button"
+import useThemeChanger from "../../hooks/useThemeChanger";
 const Navbar = () => {
-    // const {theme,setTheme}= useContext(ThemeContext)
+    
+   const {handleTheme,theme}= useThemeChanger()
 
   return (
     <header className={`${style.header}`}>
@@ -20,9 +21,8 @@ const Navbar = () => {
            */}
           <div >
             {NavThemeButton.map((btn)=>{
-                return <IconButton key={btn.value} text={btn.label} icon={btn.icon} theme={btn.theme}  onclick={()=>{}} />
-     
-            })}
+                return (theme===btn.theme&&<IconButton key={btn.value} text={btn.label} icon={btn.icon} theme={btn.theme}  onclick={handleTheme(btn.value)} />
+    )        })}
           
      
           

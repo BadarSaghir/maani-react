@@ -9,7 +9,7 @@
     color: var(--body-text);
 }
 
-#darkModeButton:hover {
+.darkModeButton:hover {
     background-color: var(--body-text);
     color: var(--bg_default);
     border: 1px solid var(--lines-color);

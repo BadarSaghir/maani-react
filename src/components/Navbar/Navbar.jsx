@@ -1,9 +1,15 @@
 import { IconButton } from "../IconButton/IconButton";
+
 import style from "./Navabar.module.css";
-import { navThemeButton,favouriteButton } from "../../constant/button";
+import { navThemeButton, favouriteButton } from "../../constant/button";
 import useThemeChanger from "../../hooks/useThemeChanger";
+import { HiOutlineMoon } from "react-icons/hi";
+import { AiOutlineHeart,AiFillHeart } from "react-icons/ai";
+import { useState } from "react";
 const Navbar = () => {
   const { handleTheme, theme } = useThemeChanger();
+  const [isActive, setIsActive] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
   return (
     <header className={`${style.header}`}>
@@ -14,23 +20,52 @@ const Navbar = () => {
               Web Topics
             </h1>
           </div>
-     
+
           <div>
             {navThemeButton.map((btn) => {
               return (
-                theme === btn.theme && (
+                theme !== btn.theme && (
                   <IconButton
                     key={btn.value}
                     text={btn.label}
-                    icon={btn.icon}
+                    icon={
+                      <span style={{ height: 16, margin: 4 }}>
+                        <HiOutlineMoon
+                          className={style.modeIcon}
+                          height={"100%"}
+                          width={"100%"}
+                        />
+                      </span>
+                    }
                     theme={btn.theme}
                     onclick={handleTheme(btn.value)}
                   />
                 )
               );
             })}
-            <IconButton text={favouriteButton.label} icon={favouriteButton.icon} onclick={()=>{}} />
             
+            <IconButton
+              id={style.btn}
+              setHover={setIsHover}
+              text={favouriteButton.label}
+              icon={
+                <span style={{ height: 16, margin: 4 }}>
+                {isActive ||isHover? 
+                 <AiFillHeart className={`${style.modeIcon} ${style.heartFill} `}  height={"100%"}
+                 width={"100%"} />
+                 :<AiOutlineHeart
+                 className={` ${style.heart} ${style.modeIcon} `}
+                 height={"100%"}
+                 width={"100%"}
+               />
+                }
+                </span>
+                
+              }
+              
+              onclick={() => {setIsActive(state=>!state)}}
+            />
+          
           </div>
         </div>
       </div>

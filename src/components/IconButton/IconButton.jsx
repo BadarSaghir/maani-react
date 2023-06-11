@@ -9,11 +9,15 @@ import PropTypes from "prop-types"
  * @param {string} text - The text to be displayed inside the button.
  * @return {JSX.Element} - A button component with the given text and onClick event.
  */
-export const IconButton = ({onclick,text,icon=""})=>{
+export const IconButton = ({onclick,text,icon,className,id,setHover})=>{
   return  <button
     type="button"
     onClick={onclick}
-    className={`${style.modesButtons} ${style.darkModeButton}`}
+    id={id}
+onMouseOver={()=>{setHover(true)}}
+onMouseOut={()=>{setHover(false)}}
+    className={`${style.modesButtons} ${style.darkModeButton} ${className}}`}
+    
   >
     {icon}
    {text}
@@ -23,7 +27,12 @@ export const IconButton = ({onclick,text,icon=""})=>{
 IconButton.propTypes = {
 onclick:PropTypes.func.isRequired,
 text:PropTypes.node.isRequired,
-icon:PropTypes.oneOfType([PropTypes.string,PropTypes.node])
+icon:PropTypes.node,
+className:PropTypes.string,
+id:PropTypes.string,
+setHover:PropTypes.func
+
+
 };
 
 export default IconButton

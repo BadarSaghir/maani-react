@@ -1,0 +1,25 @@
+.modesButtons {
+    font-family: Nunito-Sans;
+    font-size: 0.9rem;
+    background-color: transparent;
+    border: 1px solid var(--border-colors);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--body-text);
+}
+
+#darkModeButton:hover {
+    background-color: var(--body-text);
+    color: var(--bg_default);
+    border: 1px solid var(--lines-color);
+}
+
+@media(max-width: 440px){
+
+
+.modesButtons{
+    padding: 5px 10px 0;
+    font-size: .8rem;
+}
+}

@@ -1,0 +1,38 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --brand-primary:#0768AC;
+  --brand-secondary: #03C180;
+  --bg_default:#FFFFFF;
+  --bg_body:#F0F9FF;
+  --lines-color:	#DDDDDD;
+  --body-text:#333333;
+  --heart-color:#DC143C;
+  --border-colors: #DDDDDD;
+  --details-course-box-color:#333333;
+  --details-page-card-background:#EDEDED;
+  --background-color-for-images:white;
+  --details-page-course-box-text-color:white;
+  --details-page-card-text-color:black;
+  --details-page-card-add-to-favourites:white;
+}
+
+.dark-mode{
+  --bg_default:#1A1A1A !important;
+  --bg_body:#282828 !important;
+  --lines-color:#000000 !important;
+  --body-text:#EDEDED !important;
+  --heart-color:#DC143C !important;
+}
+
+
+
+h3, h4, h5, h6, p{
+  color: var(--body-text);
+  transition: color, ease-in, .5s;
+}

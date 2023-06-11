@@ -1,5 +1,5 @@
 //create theme enum with dark and light
-export const theme = {
+export const themes = {
     dark: "dark",
     light: "light",
 }

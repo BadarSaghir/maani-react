@@ -1,8 +1,11 @@
-import { createContext } from "react";
-import { theme } from "../constant/theme";
+import { createContext, useState } from "react";
+import { themes} from "../constant/theme";
 import PropTypes from "prop-types";
 
-export const ThemeContext = createContext(theme.light);
+/**
+ * @type {import('react').Context<{theme: string, setTheme: (arg0: string) => void}>} ThemeContext
+ */
+export const ThemeContext = createContext();
 
 /**
  *
@@ -10,8 +13,9 @@ export const ThemeContext = createContext(theme.light);
  *
  */
 export function ThemeContextProvider({ children }) {
+  const [theme,setTheme]=useState(themes.light)
   return (
-    <ThemeContext.Provider value={theme.light}>
+    <ThemeContext.Provider value={{theme,setTheme}}>
       {children}
     </ThemeContext.Provider>
   );

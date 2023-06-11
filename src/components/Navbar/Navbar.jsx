@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { IconButton } from "../IconButton/IconButton";
+import {ThemeContext} from "../../contexts/themeContext"
 import style from "./Navabar.module.css";
+import {NavThemeButton} from "../../constant/button"
 const Navbar = () => {
+    // const {theme,setTheme}= useContext(ThemeContext)
+
   return (
     <header className={`${style.header}`}>
       <div className={`${style.container} ${style.headerContainer}  `}>
@@ -14,32 +19,13 @@ const Navbar = () => {
            * todo:internet
            */}
           <div >
-            <IconButton/>
-            <IconButton />
-            {/* <button
-              type="button"
-              id={`${style["dark-mode-button"]} `} 
-              className={`${style["modes-buttons"]} `}
-            >
-              <ion-icon
-                id={`${style["moon"]} `}
-                className={`heart ${style["moon"]} ${style["mode-icon"]}`} 
-                name="moon-outline"
-              ></ion-icon>{" "}
-              Dark Mode
-            </button> */}
-            {/* <button
-              type="button"
-              id="header-heart-button"
-              className={`${style["modes-buttons"]} `}
-            >
-              <ion-icon
-                id="heart"
-                className={`${style["modes-icon"]} `}
-                name="heart-outline"
-              ></ion-icon>{" "}
-              Favourites
-            </button> */}
+            {NavThemeButton.map((btn)=>{
+                return <IconButton key={btn.value} text={btn.label} icon={btn.icon} theme={btn.theme}  onclick={()=>{}} />
+     
+            })}
+          
+     
+          
           </div>
         </div>
       </div>

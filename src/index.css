@@ -32,7 +32,9 @@ h3, h4, h5, h6, p{
   color: var(--body-text);
   transition: color, ease-in, .5s;
 }
-
+section {
+  display: block;
+}
 body{
   font-family: Nunito-Sans;
   background-color: var(--bg_body);

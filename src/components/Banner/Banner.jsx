@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import styles from "./Banner.module.css"
 /**
  * 
  * @param {{title:string,description:string}} param0 
@@ -6,12 +7,12 @@ import PropTypes from "prop-types"
  */
 export const Banner = ({title,description}) => {
   return (
-    <section className="banner-section">
-      <div className="banner">
-        <div className="banner-primary"></div>
-        <div className="banner-secondary"></div>
-        <div className="container banner-custom-container">
-          <div className="banner-message">
+    <section className={`${styles.bannerSection} `}>
+      <div className={`${styles.banner} `}>
+        <div className={`${styles.bannerPrimary} `}></div>
+        <div className={`${styles.bannerSecondary} `}></div>
+        <div className={`${styles.container} ${styles.bannerCustomContainer} `}>
+          <div className={`${styles.bannerMessage} `}>
             <h2>{ title}</h2>
             <p>{description }</p>
           </div>

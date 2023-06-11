@@ -2,8 +2,8 @@ import style from "./IconButtton.module.css"
 export const IconButton = ()=>{
   return  <button
     type="button"
-    // id={`${style["dark-mode-button"]} `} 
-    className={`${style["modes-buttons"]} `}
+    id={`${style.darkModeButton} `} 
+    className={`${style.modesButtons} `}
   >
     <ion-icon
       id={`${style["moon"]} `}

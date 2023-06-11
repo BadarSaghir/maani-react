@@ -7,6 +7,7 @@ import { useContext, useEffect } from "react";
 import {ThemeContext} from "./contexts/themeContext"
 import Banner from "./components/Banner/Banner";
 import { Footer } from "./components/Footer/Footer";
+import Favourites from "./components/Favourites/Favourites";
  const App = () => {
 //  const theme="" 
  const theme=useContext(ThemeContext)
@@ -21,6 +22,7 @@ useEffect(()=>{
       <Navbar />
       <Banner {...bannerConstants} />
       <Footer/>
+      <Favourites />
     </div>
   );
 };

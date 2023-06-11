@@ -1,11 +1,9 @@
-
 import { IconButton } from "../IconButton/IconButton";
 import style from "./Navabar.module.css";
-import {NavThemeButton} from "../../constant/button"
+import { navThemeButton,favouriteButton } from "../../constant/button";
 import useThemeChanger from "../../hooks/useThemeChanger";
 const Navbar = () => {
-    
-   const {handleTheme,theme}= useThemeChanger()
+  const { handleTheme, theme } = useThemeChanger();
 
   return (
     <header className={`${style.header}`}>
@@ -16,16 +14,23 @@ const Navbar = () => {
               Web Topics
             </h1>
           </div>
-          {/**
-           * todo:internet
-           */}
-          <div >
-            {NavThemeButton.map((btn)=>{
-                return (theme===btn.theme&&<IconButton key={btn.value} text={btn.label} icon={btn.icon} theme={btn.theme}  onclick={handleTheme(btn.value)} />
-    )        })}
-          
      
-          
+          <div>
+            {navThemeButton.map((btn) => {
+              return (
+                theme === btn.theme && (
+                  <IconButton
+                    key={btn.value}
+                    text={btn.label}
+                    icon={btn.icon}
+                    theme={btn.theme}
+                    onclick={handleTheme(btn.value)}
+                  />
+                )
+              );
+            })}
+            <IconButton text={favouriteButton.label} icon={favouriteButton.icon} onclick={()=>{}} />
+            
           </div>
         </div>
       </div>

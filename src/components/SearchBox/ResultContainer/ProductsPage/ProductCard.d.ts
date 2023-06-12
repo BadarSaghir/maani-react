@@ -1,13 +1,16 @@
 
   export  interface IProductCard {
-        startRating: number;
+        id:number,
+        rating: number;
         totalStars: number;
-        title: string;
-        subTitle: string;
-        src: string;
-        alt: string;
+        topic: string;
+        category: string;
+        image: string;
+        baseDir: string;
         href: string;
-        author: string;
+        name: string;
       }
     
 
+
+  

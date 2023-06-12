@@ -11,7 +11,15 @@ import Favourites from "./components/Favourites/Favourites";
 import FavouritiesContext from "./contexts/favouritesContext";
 import Home from "./pages";
 import Details from "./pages/details";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
+
  const App = () => {
+  const queryClient = new QueryClient()
+
 // style.flexBox
  const theme=useContext(ThemeContext)
  const {isOpen,setIsOpen}=useContext(FavouritiesContext)
@@ -35,6 +43,8 @@ import Details from "./pages/details";
 
 
   return (
+    <QueryClientProvider client={queryClient}>
+
     <BrowserRouter>
     <div className={`${style.flexBox} ${themes.dark===theme.theme ?style.darkMode+' '+style.body:style.body}`}>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -59,6 +69,8 @@ import Details from "./pages/details";
     </div>
 
     </BrowserRouter>
+    </QueryClientProvider>
+
   );
 };
 

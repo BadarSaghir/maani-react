@@ -1,11 +1,19 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import ResultContainer from "./ResultContainer/ResultContainer"
 import SearchBar from "./SearchInput/SearchBar"
 import styles from "./SearchBox.module.css"
-const SearchPage =()=>{
+
+/**
+ *@typedef {import("./ResultContainer/ProductsPage/ProductCard.d").IProductCard[]} IProductCard
+ * @param {{data:IProductCard,setData:(IProductCard)=>IProductCard}} param0 
+ * @returns 
+ */
+const SearchPage =({data,setData})=>{
 
     return <section className={styles['web-topics-page']}>
    <SearchBar/>
-   <ResultContainer/>
+   <ResultContainer data={data}/>
 </section>
 }
 

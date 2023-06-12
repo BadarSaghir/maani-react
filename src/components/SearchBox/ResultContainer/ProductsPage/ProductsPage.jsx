@@ -15,7 +15,7 @@ const ProductsPage = ({ productsData }) => {
   return (
     <>
       {productsData.map((item, id) => (
-        <ProductCard key={id} {...item} />
+        <ProductCard key={id}  {...item} />
       ))}
     </>
   );

@@ -1,24 +1,41 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import ResultContainer from "./ResultContainer/ResultContainer"
-import SearchBar from "./SearchInput/SearchBar"
-import styles from "./SearchBox.module.css"
+import ResultContainer from "./ResultContainer/ResultContainer";
+import SearchBar from "./SearchInput/SearchBar";
+import styles from "./SearchBox.module.css";
+import { useEffect, useState } from "react";
+import useSearchTopics from "../../hooks/useSearchTopics";
 
 /**
- *@typedef {import("./ResultContainer/ProductsPage/IProductCard").IProductCard} IProductCard
- * @param {{data:IProductCard[],isLoading:boolean}} param0 
- * @returns 
+ * @typedef {import("./ResultContainer/ProductsPage/IProductCard.d").IProductCard} IProductCard
  */
-import { useState } from "react"
-const SearchPage =({data,isLoading=false})=>{
-    const [pageData,setPageDataData] = useState({data:data,isLoading:isLoading})
+/**
+ *@typedef {import("../../hooks/refetch").IRefetch} IRefetch
+ * @param {{data:IProductCard[],isLoading:boolean,refetch:IRefetch}}
+ * @returns
+ */
+const SearchPage = () => {
+  const { data, refetch, isFetchedAfterMount,setSearch, isLoading,isInitialLoading } = useSearchTopics("");
 
-    if(isLoading) return <div>Loading...</div>
+  const [sortBy,setSortBy]= useState("")
+  const [filterBy,setFilterBy]= useState("")
+  return (
+    <section className={styles["web-topics-page"]}>
+      <SearchBar
+      setSortBy={setSortBy}
+      setFilterBy={setFilterBy}
+      data={data}
+        refetch={refetch}
+        setSearch={setSearch}
+      />
 
-    return <section className={styles['web-topics-page']}>
-   <SearchBar/>
-   <ResultContainer data={pageData.data}/>
-</section>
-}
+      {isLoading ? (
+        <div>Loading</div>
+      ) : (
+        <ResultContainer data={data} sortBy={sortBy} filterBy={filterBy} />
+      )}
+    </section>
+  );
+};
 
-export default SearchPage
+export default SearchPage;

@@ -1,5 +1,31 @@
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import style from "./SearchBar.module.css";
-const SearchBar = () => {
+
+const SearchBar = ({data,refetch,setSearch,setSortBy,
+    setFilterBy}) => {
+const [categories,setCategories]=useState([])
+
+
+useEffect(()=>{
+    if(data){
+        const category = [...new Set(data.map((item) => item.category))];
+        console.log("pageData", data);
+        
+        setCategories(category)
+    }
+},[data])
+
+/**
+ *@typedef {import("react").ChangeEvent<HTMLInputElement>} Event
+ * @param {Event} e 
+ */
+async function handleSearch(e){
+    const text=e.target.value
+   setSearch(`?phrase=${text}`)
+        await  refetch()
+    console.log(text)
+}
   return (
     <section
    
@@ -16,7 +42,8 @@ const SearchBar = () => {
           <input
             className={`${style["search-field"]}`}
             type="search"
-            
+            name="search"
+            onChange={(e)=>{handleSearch(e)}}
             placeholder="Search the website..."
           />
        
@@ -34,8 +61,10 @@ const SearchBar = () => {
               id={`"search-filter-select"`}
               name="filter"
               className={`"w-100 border-0"`}
+              onChange={(e)=>setSortBy(e.target.value)}
+
             >
-              <option value="Default">Default</option>
+              <option value="">Default</option>
               <option value="Topic">Topic Title</option>
               <option value="Author">Author Name</option>
             </select>
@@ -53,10 +82,15 @@ const SearchBar = () => {
             <select
               id={`"search-filter-select"`}
               name="filter"
+              onChange={(e)=>setFilterBy(e.target.value)}
               className={`"w-100 border-0"`}
             >
-              <option value="Default">Default</option>
+              <option value="">Default</option>
+            
+            {categories.map((value,idx)=><option  key={idx} value={value}>{value}</option>)}  
+            
             </select>
+        
           </div>
         </div>
       </div>

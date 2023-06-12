@@ -11,10 +11,11 @@ import {tapWebApiEndPoints} from "../../../../constant/ApiEndPoints"
  * @param {{productsData?:IProductCard[]}} param0
  * @returns
  */
-const ProductsPage = ({ productsData }) => {
+const ProductsPage = ({ productsData,sortBy="", filterBy="" }) => {
+  const data=productsData.sort((data)=>data.name).filter((data)=>data.category.toLowerCase().includes(filterBy.toLowerCase()))
   return (
     <>
-      {productsData.map((item, id) => (
+      {data.map((item, id) => (
         <ProductCard href={`/details/${item.id}`}  key={id}  {...item}  />
       ))}
     </>

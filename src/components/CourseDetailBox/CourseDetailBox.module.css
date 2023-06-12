@@ -9,7 +9,19 @@
 .course-details-box{
     background-color: var(--details-course-box-color);
 }
-
+.add-to-favourites-box button{
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items:center ;
+}
+.details-page-heart{
+   margin-top: 10px;
+   display: block;
+}
 
 .details-page-container{
     padding-inline-start:19.29% ; /*17.29%*/
@@ -119,7 +131,7 @@
     border: 0;
     text-align: center;
     margin:0 0 10px 0;
-    padding:3px 0 17px 0;
+    /* padding:3px 0 17px 0; */
     background-color: var(--brand-secondary);
     color:var(--details-page-card-add-to-favourites);
     font-size: 1.25rem;
@@ -127,7 +139,6 @@
 }
 
 .details-page-heart{
-    transform: translateY(10px);
     padding-left: 8px;
     font-size: 2rem;
 }

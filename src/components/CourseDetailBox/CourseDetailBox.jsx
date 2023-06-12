@@ -2,7 +2,36 @@
 import style from "./CourseDetailBox.module.css"
 import {StarBox} from "../Rating/StarBox"
 import RatingStar from "../Rating/RatingStar"
+import { useState,useEffect } from "react"
+import { FAVOURITE_KEY } from "../../constant/favourties"
+import {AiOutlineHeart,AiFillHeart} from "react-icons/ai"
 export function CourseDetailBox({data}) {
+
+    const [items,setItems]=useState([  {
+        id:-1,
+        title : "",
+        image : { url: "/images/topics-thumbnails/", alt: "" },
+        startRating : 0,
+        totalStars :5,
+      }])
+    useEffect(()=>{
+      const _items= localStorage.getItem(FAVOURITE_KEY)
+      if(_items){
+        setItems(JSON.parse(_items))
+      }else{
+        localStorage.setItem(FAVOURITE_KEY,[])
+        setItems(JSON.parse([]))
+      }
+    },[])
+
+
+   function handleFavourite(){
+    let index = items.findIndex(element => element.id === data.id);
+    items.splice(index, 1);
+
+
+    }
+
     return <div id="course-details-box" className={`${style["course-details-box"]}`}
 >
         <div
@@ -84,9 +113,12 @@ export function CourseDetailBox({data}) {
 
                         >
                             <p>Interested about this topic?</p>
-                            <button type="button" className={`${style["rounded-0"]}`}
+                            <button type="button"  onClick={handleFavourite} className={`${style["rounded-0"]}`}
 >
                                 Add to Favourites{" "}
+                                <span className={style["details-page-heart"]}>
+                                {items.findIndex(element => element.id === data.id)? <AiFillHeart/>:<AiOutlineHeart/>}
+                                </span>
                                 <ion-icon
                                     id="details-page-heart"
                                     class="details-page-heart"

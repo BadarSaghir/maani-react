@@ -48,7 +48,8 @@ export function CourseDetailBox({ data }) {
       localStorage.setItem(FAVOURITE_KEY, JSON.stringify(pustItems));
       setItems(pustItems);
     }else{
-      const newItems= items.splice(items.findIndex((element) => element.id === data.id), 1);
+      const newItems= items.filter((item)=>item.id!==data.id)
+      
       localStorage.setItem(FAVOURITE_KEY, JSON.stringify(newItems));
       setfavourities("")
       setItems(newItems);

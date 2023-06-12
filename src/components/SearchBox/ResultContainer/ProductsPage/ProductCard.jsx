@@ -5,8 +5,8 @@ import {Link} from "react-router-dom"
 import style from "./ProductCard.module.css"
 /**
  * 
- * @param {import("./ProductCard").IProductCard} param0 
- * @returns 
+ * @param {import("./IProductCard").IProductCard} 
+ *  
  */
 const ProductCard = ({id=0,category='Web Development Languages',totalStars=5,image="",topic="HTML",name="Sarah Smith",rating=3,baseDir="/images/topics-thumbnails/",href="#" }) => {
     return(<Link key={id} to={href} className={`${style["web-topic-card"]}`}>   

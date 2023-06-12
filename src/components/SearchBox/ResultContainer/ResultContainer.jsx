@@ -2,7 +2,7 @@
 import style from "./ResultContainer.module.css"
 import ProductsPage from "./ProductsPage/ProductsPage"
 /**
- *@typedef {import("./ProductsPage/ProductCard.d").IProductCard[]} IProductCard
+ *@typedef {import("./ProductsPage/IProductCard").IProductCard[]} IProductCard
  * @param {{data:IProductCard,found:string}} param0 
  * @returns 
  */

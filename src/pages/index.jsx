@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import SearchPage from "../components/SearchBox/SearchBox";
+import { tapWebApiEndPoints } from "../constant/ApiEndPoints";
 import {
     useQuery,
   } from '@tanstack/react-query'
@@ -16,6 +17,7 @@ const Home = () => {
     if(isLoading) return <div>Loading...</div>
   return (
     <main>
+        {/* {data[0].id} */}
       <SearchPage data={data}/>
     </main>
   );
@@ -24,7 +26,8 @@ const Home = () => {
 
 async function fetchTopics(){
  
-   return fetch('https://api.github.com/repos/tannerlinsley/react-query').then((res) => res.json())
+   const res= await fetch(tapWebApiEndPoints)
+   return await res.json()
 }
 
 export default Home;

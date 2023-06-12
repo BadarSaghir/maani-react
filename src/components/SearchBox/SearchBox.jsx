@@ -5,7 +5,7 @@ import SearchBar from "./SearchInput/SearchBar"
 import styles from "./SearchBox.module.css"
 
 /**
- *@typedef {import("./ResultContainer/ProductsPage/ProductCard.d").IProductCard[]} IProductCard
+ *@typedef {import("./ResultContainer/ProductsPage/IProductCard").IProductCard[]} IProductCard
  * @param {{data:IProductCard,setData:(IProductCard)=>IProductCard}} param0 
  * @returns 
  */

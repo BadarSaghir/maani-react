@@ -2,9 +2,9 @@
 // import style from "./ProductPage.module.css"
 
 import ProductCard from "./ProductCard";
-
+import {tapWebApiEndPoints} from "../../../../constant/ApiEndPoints"
 /**
- *@typedef {import("./ProductCard.d").IProductCard} IProductCard
+ *@typedef {import("./IProductCard").IProductCard} IProductCard
  */
 /**
  *
@@ -15,7 +15,7 @@ const ProductsPage = ({ productsData }) => {
   return (
     <>
       {productsData.map((item, id) => (
-        <ProductCard key={id}  {...item} />
+        <ProductCard href={`/details/${item.id}`}  key={id}  {...item}  />
       ))}
     </>
   );

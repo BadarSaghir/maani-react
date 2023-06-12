@@ -4,9 +4,9 @@ const  Details=()=>{
     const {id} = useParams();
 
     return (
-        <>    
+        <main >    
             {id}
-        </>
+        </main>
     )
 }
 

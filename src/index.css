@@ -57,6 +57,11 @@ body{
 
   transition: background-color, ease-in .5s;
 }
+main{
+  overflow: hidden;
+  display: flex;
+}
+
 @keyframes favouritesRollingUpAnimation{
   0%{
       transform: translateY(175px);

@@ -1,0 +1,8 @@
+.web-topics-page{
+    flex-shrink: 0;
+    width: 100%;
+    opacity: 1;
+    transition-property: margin, opacity;
+    transition-duration: .5s;
+    transition-timing-function: ease-in;
+}

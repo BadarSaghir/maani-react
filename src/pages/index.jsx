@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SearchPage from "../components/SearchBox/SearchBox";
 import { tapWebApiEndPoints } from "../constant/ApiEndPoints";
 import {
@@ -10,15 +10,12 @@ const Home = () => {
         queryKey: ['fetchTopics'],
         queryFn:fetchTopics 
       })
-      
-    useEffect(() => {
-        
-    })
+    
     if(isLoading) return <div>Loading...</div>
   return (
     <main>
         {/* {data[0].id} */}
-      <SearchPage data={data}/>
+   {<SearchPage data={data} />}
     </main>
   );
 };

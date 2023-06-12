@@ -5,15 +5,19 @@ import SearchBar from "./SearchInput/SearchBar"
 import styles from "./SearchBox.module.css"
 
 /**
- *@typedef {import("./ResultContainer/ProductsPage/IProductCard").IProductCard[]} IProductCard
- * @param {{data:IProductCard,setData:(IProductCard)=>IProductCard}} param0 
+ *@typedef {import("./ResultContainer/ProductsPage/IProductCard").IProductCard} IProductCard
+ * @param {{data:IProductCard[],isLoading:boolean}} param0 
  * @returns 
  */
-const SearchPage =({data,setData})=>{
+import { useState } from "react"
+const SearchPage =({data,isLoading=false})=>{
+    const [pageData,setPageDataData] = useState({data:data,isLoading:isLoading})
+
+    if(isLoading) return <div>Loading...</div>
 
     return <section className={styles['web-topics-page']}>
    <SearchBar/>
-   <ResultContainer data={data}/>
+   <ResultContainer data={pageData.data}/>
 </section>
 }
 

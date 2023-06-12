@@ -149,16 +149,12 @@ export function CourseDetailBox({ data }) {
                   <span className={style["details-page-heart"]}>
                     {items.findIndex((element) => element.id === data.id) !=
                     -1 ? (
-                      <AiFillHeart />
+                      <AiFillHeart color="red" />
                     ) : (
                       <AiOutlineHeart />
                     )}
                   </span>
-                  <ion-icon
-                    id="details-page-heart"
-                    class="details-page-heart"
-                    name="heart-outline"
-                  ></ion-icon>
+                
                 </button>
                 <h6>Unlimited Credits</h6>
               </div>

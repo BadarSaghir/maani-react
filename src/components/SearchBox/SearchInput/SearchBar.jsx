@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import style from "./SearchBar.module.css";
+import { tapWebApiListPharaseParam } from "../../../constant/ApiEndPoints";
 
 const SearchBar = ({data,refetch,setSearch,setSortBy,
     setFilterBy}) => {
@@ -22,7 +23,7 @@ useEffect(()=>{
  */
 async function handleSearch(e){
     const text=e.target.value
-   setSearch(`?phrase=${text}`)
+   setSearch(tapWebApiListPharaseParam(text?text:""))
         await  refetch()
     console.log(text)
 }

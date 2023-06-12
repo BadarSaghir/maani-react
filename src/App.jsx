@@ -3,7 +3,7 @@ import style from  './App.module.css'
 import {themes} from "./constant/theme"
 import {bannerConstants} from "./constant/banner"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {ThemeContext} from "./contexts/themeContext"
 import Banner from "./components/Banner/Banner";
 import { Footer } from "./components/Footer/Footer";
@@ -15,32 +15,23 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-
-
+import { FAVOURITE_KEY, favDumyStringifyItems} from "./constant/favourties";
+import { useState } from "react";
  const App = () => {
   const queryClient = new QueryClient()
-
+  
 // style.flexBox
  const theme=useContext(ThemeContext)
  const {isOpen,setIsOpen}=useContext(FavouritiesContext)
- const items=[{
-  title : "Cloud Computing",
-  image : { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
-  startRating : 4,
-  totalStars :5,
-},{
-  title : "Cloud Computing",
-  image : { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
-  startRating : 1,
-  totalStars :5,
-},
-{
-  title : "Cloud Computing",
-  image : { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
-  startRating : 2,
-  totalStars :5,
-}]
-
+const [items,setItems]=useState([])
+useEffect(()=>{
+  const _items= localStorage.getItem(FAVOURITE_KEY)
+  if(_items){
+    setItems(JSON.parse(_items))
+  }else{
+    localStorage.setItem(FAVOURITE_KEY,favDumyStringifyItems)
+  }
+},[])
 
   return (
     <QueryClientProvider client={queryClient}>

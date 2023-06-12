@@ -5,7 +5,7 @@ import SearchBar from "./SearchInput/SearchBar";
 import styles from "./SearchBox.module.css";
 import { useEffect, useState } from "react";
 import useSearchTopics from "../../hooks/useSearchTopics";
-
+import { tapWebApiListParam } from "../../constant/ApiEndPoints";
 /**
  * @typedef {import("./ResultContainer/ProductsPage/IProductCard.d").IProductCard} IProductCard
  */
@@ -15,7 +15,7 @@ import useSearchTopics from "../../hooks/useSearchTopics";
  * @returns
  */
 const SearchPage = () => {
-  const { data, refetch, isFetchedAfterMount,setSearch, isLoading,isInitialLoading } = useSearchTopics("");
+  const { data, refetch, isFetchedAfterMount,setSearch, isLoading,isInitialLoading } = useSearchTopics(tapWebApiListParam());
 
   const [sortBy,setSortBy]= useState("")
   const [filterBy,setFilterBy]= useState("")

@@ -1,0 +1,226 @@
+.container{
+    padding-inline:4%;
+}
+
+.main-custom-container{
+    padding-top: 12.5px;
+}
+
+.main-custom-container h3{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--body-text);
+    margin: 0 0 30px 0;
+}
+
+.web-topics-box-parent{
+    padding-bottom: 4px;
+}
+
+.web-topics{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(20% - 24px) , 1fr));
+    gap:35px 30px; /*2.29%*/
+}
+
+
+
+
+
+@media(max-width: 440px){
+   
+    .main-custom-container{
+        padding-inline:4% !important;
+    }
+
+    .main-custom-container h3{
+        font-weight: 800;
+        font-size: 1.41rem;
+    }
+
+    .web-topics{
+        grid-template-columns: minmax(100%, 20%);
+        gap: 30px 0;
+    }
+
+  
+
+}
+
+@media(min-width: 441px) and (max-width:479px){
+
+
+    
+    .main-custom-container{
+        padding-inline:10% !important;
+    }
+
+    .main-custom-container h3{
+        font-weight: 800;
+        font-size: 1.41rem;
+    }
+
+    .web-topics{
+        grid-template-columns: minmax(100%, 20%);
+        gap: 30px 0;
+    }
+
+}
+
+@media(min-width: 480px) and (max-width:519px){
+
+
+    
+
+    
+
+    .main-custom-container{
+        padding-inline:10% !important;
+    }
+
+    .main-custom-container h3{
+        font-weight: 800;
+        font-size: 1.41rem;
+    }
+
+    .web-topics{
+        grid-template-columns: minmax(100%, 20%);
+        gap: 30px 0;
+    }
+
+}
+
+@media(min-width:520px) and (max-width: 649px){
+  
+
+
+    .main-custom-container{
+        padding-inline:10% !important;
+    }
+
+    .main-custom-container h3{
+        font-weight: 800;
+        font-size: 1.41rem;
+    }
+
+    .web-topics{
+        grid-template-columns:repeat(auto-fill, minmax(calc(50% - 9px), 1fr)) ;
+        gap: 30px 18px;
+    }
+
+}
+
+@media(min-width:650px) and (max-width: 759px){
+    
+
+
+    .main-custom-container{
+        padding-inline:10% !important;
+    }
+
+    .main-custom-container h3{
+        font-weight: 800;
+        font-size: 1.41rem;
+    }
+
+    .web-topics{
+        grid-template-columns:repeat(auto-fill, minmax(calc(50% - 9px), 1fr)) ;
+        gap: 30px 18px;
+    }
+
+
+
+}
+
+@media(min-width: 760px) and (max-width: 767px){
+    
+  
+
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(31.04%, 1fr));
+        column-gap: 3.35%;
+    }
+
+}
+
+@media(min-width: 768px) and (max-width: 799px){
+    
+
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(31.04%, 1fr) );
+        column-gap: 3.35%;
+    }
+
+   
+    
+    
+}
+
+@media(min-width: 800px) and (max-width: 869px){
+    
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(31.04%, 1fr));
+        column-gap: 3.35%;
+    }
+
+
+}
+
+@media(min-width: 870px) and (max-width: 911px){
+
+
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(31.04%, 1fr));
+        column-gap: 3.35%;
+    }
+
+}
+
+@media(min-width: 912px) and (max-width: 969px){
+   
+
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(31.043%, 1fr));
+        column-gap: 2.29%;
+    }
+
+}
+
+@media(min-width: 970px) and (max-width: 1023px){
+
+
+    /*  WEB TOPICS COURSES////////////////////////////////////////////////////////////////////////////// */
+
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(31.043%, 1fr));
+        column-gap: 2.29%;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1279px){
+
+
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(22.71%, 1fr));
+        column-gap: 2.29%;
+    }
+
+    /* DETAILS PAGE--------------------------------------------------------------------------------------------------------------------------------->*/
+
+    /* course details section////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* details page's card///////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+    /* course sub topics///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+}
+
+@media(min-width: 1280px) and (max-width:1439px){
+    /*  WEB TOPICS COURSES////////////////////////////////////////////////////////////////////////////// */
+    .web-topics{
+        grid-template-columns: repeat(auto-fill, minmax(22.71%, 1fr));
+        column-gap: 2.29%;
+    }
+}

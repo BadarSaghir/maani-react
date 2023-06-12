@@ -17,8 +17,8 @@ export function SubTopicBox({ data }) {
           </li>
           {data.subtopics.map((subTopic, idx) => (
             <li key={idx} className={`${style["course-sub-topic"]}`}>
-              <span color="green" >
-                <FaRegCheckCircle className={style[".checkmark"]} color="green" />
+              <span  className={style["checkmark"]}  >
+                <FaRegCheckCircle size={"small"} height={'100%'} width={'100%'}/>
               </span>
               <h3>{subTopic}</h3>
             </li>

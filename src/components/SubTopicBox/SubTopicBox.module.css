@@ -39,7 +39,7 @@
  }
  
  .course-sub-topic .checkmark{
-     font-size: 1.5rem;
+     font-size: 0.6rem;
      color: var(--brand-secondary);
      width: 5%;
  }

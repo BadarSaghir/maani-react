@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import style from  './App.module.css'
 import {themes} from "./constant/theme"
 import {bannerConstants} from "./constant/banner"
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+import {Routes,Route,useLocation} from "react-router-dom"
 import { useContext, useEffect } from "react";
 import {ThemeContext} from "./contexts/themeContext"
 import Banner from "./components/Banner/Banner";
@@ -16,6 +16,8 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import { FAVOURITE_KEY,} from "./constant/favourties";
+import {CSSTransition,TransitionGroup} from "react-transition-group"
+
 import { useState } from "react";
  const App = () => {
   const queryClient = new QueryClient()
@@ -30,34 +32,32 @@ useEffect(()=>{
     setItems(JSON.parse(_items))
   }
 },[isOpen,favourities])
+const location = useLocation();
 
   return (
     <QueryClientProvider client={queryClient}>
 
-    <BrowserRouter>
     <div className={`${style.flexBox} ${themes.dark===theme.theme ?style.darkMode+' '+style.body:style.body}`}>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Banner {...bannerConstants} />
       <div className={style.container}>
-        
-      
       <Routes>
-        <Route path="/">
-          <Route index element={  <Home />} />
+  
+     
+        
+          <Route path="/" element={  <Home />} />
         
           
           <Route path="/details/:id" element={<Details />} />
           <Route path="*" element={<div>Not Found</div>} />
 
-        </Route>
-      </Routes>
-  
+    
+  </Routes>
     </div>
       <Footer/>
       <Favourites show={isOpen} items={items}/>
     </div>
 
-    </BrowserRouter>
     </QueryClientProvider>
 
   );

@@ -46,13 +46,6 @@
     font-weight: bold;
 }
 
-.course-details .star-color-fill{
-    background-color: var(--details-course-box-color);
-}
-
-.course-details .star-rating-box{
-    margin-bottom: 20px;
-}
 
 .course-details p{
     color: var(--details-page-course-box-text-color);

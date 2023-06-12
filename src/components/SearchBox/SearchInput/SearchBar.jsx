@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import style from "./SearchBar.module.css";
 import { tapWebApiListParam, tapWebApiListPharaseParam } from "../../../constant/ApiEndPoints";
-
+import {IoSearchOutline} from "react-icons/io5"
 const SearchBar = ({data,refetch,setSearch,setSortBy,
     setFilterBy}) => {
 const [categories,setCategories]=useState([])
@@ -39,8 +39,9 @@ async function handleSearch(e){
         className={` ${style["container"]}  ${style["search-custom-container"]}`}
       >
         <div className={`${style["search-bar"]}`}>
-          <span >
+          <span  className={`${style["search-icon"]}`}>
         {/* TODO:ICON */}
+        <IoSearchOutline />
             {/* <ion-icon clas={`${style["search-icon"]}`}> name="search-outline"></ion-icon> */}
           </span>
           <input

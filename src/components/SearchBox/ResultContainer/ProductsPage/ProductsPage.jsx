@@ -2,7 +2,6 @@
 // import style from "./ProductPage.module.css"
 
 import ProductCard from "./ProductCard";
-import {tapWebApiEndPoints} from "../../../../constant/ApiEndPoints"
 /**
  *@typedef {import("./IProductCard").IProductCard} IProductCard
  */

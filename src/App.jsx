@@ -13,7 +13,23 @@ import FavouritiesContext from "./contexts/favouritesContext";
 
  const theme=useContext(ThemeContext)
  const {isOpen,setIsOpen}=useContext(FavouritiesContext)
-
+ const items=[{
+  title : "Cloud Computing",
+  image : { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
+  startRating : 4,
+  totalStars :5,
+},{
+  title : "Cloud Computing",
+  image : { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
+  startRating : 1,
+  totalStars :5,
+},
+{
+  title : "Cloud Computing",
+  image : { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
+  startRating : 2,
+  totalStars :5,
+}]
 
 
   return (
@@ -21,7 +37,7 @@ import FavouritiesContext from "./contexts/favouritesContext";
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Banner {...bannerConstants} />
       <Footer/>
-      <Favourites show={isOpen}/>
+      <Favourites show={isOpen} items={items}/>
     </div>
   );
 };

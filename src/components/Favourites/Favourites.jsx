@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 import FavouriteItem from "./FavouriteItem/FavouriteItem"
 import style from "./Favourites.module.css"
-const Favourites = ({show=true})=>{
+const Favourites = ({show=true,items=[{
+    title : "Cloud Computing",
+    image : { url: "/images/topics-thumbnails/cloud.jpeg", alt: "react course" },
+    startRating : 4,
+    totalStars :5,
+  }]})=>{
 // useEffect(()=>{
 // console.log("rerender")
 // },[show])
@@ -11,8 +16,9 @@ const Favourites = ({show=true})=>{
         <div className={`${style["favourites-items"]}`}>
             <h3>My Favourite Topics</h3>
             <div className={`${style["favourites-items-container"]}`}>
-                <FavouriteItem />
-                <FavouriteItem  />
+                {items.map((item,id)=> <FavouriteItem key={id} {...item} />)}
+               
+                {/* <FavouriteItem  /> */}
 
             </div>
         </div>

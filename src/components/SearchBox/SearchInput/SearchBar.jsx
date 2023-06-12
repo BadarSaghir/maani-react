@@ -65,8 +65,8 @@ async function handleSearch(e){
 
             >
               <option value="">Default</option>
-              <option value="Topic">Topic Title</option>
-              <option value="Author">Author Name</option>
+              <option value="topic">Topic Title</option>
+              <option value="name">Author Name</option>
             </select>
           </div>
           <div

@@ -12,7 +12,8 @@ import {tapWebApiEndPoints} from "../../../../constant/ApiEndPoints"
  * @returns
  */
 const ProductsPage = ({ productsData,sortBy="", filterBy="" }) => {
-  const data=productsData.sort((data)=>data.name).filter((data)=>data.category.toLowerCase().includes(filterBy.toLowerCase()))
+  let data=productsData.filter((data)=>data.category.toLowerCase().includes(filterBy.toLowerCase()))
+  if(sortBy)data=data.sort((a,b)=>a[sortBy].localeCompare(b[sortBy]))
   return (
     <>
       {data.map((item, id) => (

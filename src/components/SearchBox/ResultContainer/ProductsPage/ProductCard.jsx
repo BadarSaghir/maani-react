@@ -15,8 +15,8 @@ const ProductCard = ({id=0,category='Web Development Languages',totalStars=5,ima
 </div>
     <div className={`${style["card-custom-container"]}`}>
         <div className={`${style["card-details"]}`}>
-            <h4>{topic}</h4>
-            <h5>{category}</h5>
+            <h4>{category}</h4>
+            <h5>{topic}</h5>
             <StarBox >
             {Array.from(Array(totalStars), (_, i) => {
         

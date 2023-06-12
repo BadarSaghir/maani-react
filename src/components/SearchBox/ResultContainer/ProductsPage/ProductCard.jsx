@@ -2,14 +2,19 @@
 import StarBox from "../../../Rating/StarBox";
 import RatingStar from "../../../Rating/RatingStar";
 import {Link} from "react-router-dom"
-
-const ProductCard = ({startRating=3,totalStars=5,title="Web Development Languages",subTitle="HTML",src="/images/topics-thumbnails/html.png",alt="Web Development Languages",href="#"}) => {
-    return(<Link to={href} className="web-topic-card">   
-     <div className="card-thumbnail">
-    <img className="main-page-card-thumbnail-img" src={src} alt={alt} />
+import style from "./ProductCard.module.css"
+/**
+ * 
+ * @param {import("./ProductCard").IProductCard} param0 
+ * @returns 
+ */
+const ProductCard = ({startRating=3,totalStars=5,title="Web Development Languages",subTitle="HTML",src="/images/topics-thumbnails/html.png",alt="Web Development Languages",href="#",author="Sarah Smith" }) => {
+    return(<Link to={href} className={`${style["web-topic-card"]}`}>   
+     <div className={`${style["card-thumbnail"]}`}>
+    <img className={`${style["main-page-card-thumbnail-img"]}`} src={src} alt={alt} />
 </div>
-    <div className="card-custom-container">
-        <div className="card-details">
+    <div className={`${style["card-custom-container"]}`}>
+        <div className={`${style["card-details"]}`}>
             <h4>{title}</h4>
             <h5>{subTitle}</h5>
             <StarBox >
@@ -20,7 +25,7 @@ const ProductCard = ({startRating=3,totalStars=5,title="Web Development Language
             );
           })}
             </StarBox>
-            <p>Author: Sarah Smith</p>
+            <p>Author: {author}</p>
         </div>
     </div>
     </Link>

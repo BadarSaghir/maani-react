@@ -28,8 +28,6 @@ useEffect(()=>{
   const _items= localStorage.getItem(FAVOURITE_KEY)
   if(_items){
     setItems(JSON.parse(_items))
-  }else{
-    localStorage.setItem(FAVOURITE_KEY,favDumyStringifyItems)
   }
 },[])
 

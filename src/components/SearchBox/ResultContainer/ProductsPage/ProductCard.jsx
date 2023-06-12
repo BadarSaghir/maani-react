@@ -3,8 +3,8 @@ import StarBox from "../../../Rating/StarBox";
 import RatingStar from "../../../Rating/RatingStar";
 import {Link} from "react-router-dom"
 
-const ProductCard = ({startRating=3,totalStars=5,title="Web Development Languages",subTitle="HTML",src="/images/topics-thumbnails/html.png",alt="Web Development Languages"}) => {
-    return(<Link to="#" className="web-topic-card">   
+const ProductCard = ({startRating=3,totalStars=5,title="Web Development Languages",subTitle="HTML",src="/images/topics-thumbnails/html.png",alt="Web Development Languages",href="#"}) => {
+    return(<Link to={href} className="web-topic-card">   
      <div className="card-thumbnail">
     <img className="main-page-card-thumbnail-img" src={src} alt={alt} />
 </div>

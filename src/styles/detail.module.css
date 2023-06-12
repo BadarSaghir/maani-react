@@ -1,0 +1,31 @@
+.details-page{
+    flex-shrink: 0;
+    width: 100%;
+    transition: opacity ease-in .5s;
+    opacity: 1;
+    height: fit-content;
+}
+
+
+
+@media(min-width:650px) and (max-width: 759px){
+    .details-page{
+        display: flex;
+        flex-wrap: wrap;
+    }
+        
+}
+
+@media(min-width: 760px) and (max-width: 767px){
+    .details-page{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 799px){
+    .details-page{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

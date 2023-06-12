@@ -21,7 +21,7 @@ const Navbar = ({isOpen="",setIsOpen=()=>{}}) => {
           <div className={`${style.pageTitle} `}>
             <h1 id={`${style.pageTitle} `} tabIndex="0">
           <Link to={"/"}>
-            <a> Web Topics</a>
+            <span> Web Topics</span>
            </Link>    
             </h1>
           </div>

@@ -9,7 +9,25 @@
 
   .body{
     font-family: Nunito-Sans;
-    background-color: var(--bg_body);
+    background-color: var(--bg_body) !important;
     line-height: normal; 
     transition: background-color, ease-in .5s;
+  }
+
+  .container{
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    transition: background-color, ease-in .5s;
+    
+    color: var(--body-text) !important;
+
+    background-color: var(--bg_body) !important;
+  }
+
+.flexBox{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
   }

@@ -42,11 +42,19 @@ section {
     --body-text:#EDEDED !important;
     --heart-color:#DC143C !important;
   }
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
   
 body{
   font-family: Nunito-Sans;
   background-color: var(--bg_body);
   line-height: normal; 
+
   transition: background-color, ease-in .5s;
 }
 @keyframes favouritesRollingUpAnimation{
@@ -66,6 +74,7 @@ body{
       transform: translateY(175px);
   }
 }
+
 #forward{
   animation: favouritesRollingUpAnimation forwards .5s ease-in ;
 }

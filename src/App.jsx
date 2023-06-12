@@ -2,13 +2,14 @@ import Navbar from "./components/Navbar/Navbar";
 import style from './App.module.css'
 import {themes} from "./constant/theme"
 import {bannerConstants} from "./constant/banner"
-
-import { useContext, useEffect } from "react";
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import { useContext } from "react";
 import {ThemeContext} from "./contexts/themeContext"
 import Banner from "./components/Banner/Banner";
 import { Footer } from "./components/Footer/Footer";
 import Favourites from "./components/Favourites/Favourites";
 import FavouritiesContext from "./contexts/favouritesContext";
+import Home from "./pages";
  const App = () => {
 
  const theme=useContext(ThemeContext)
@@ -33,9 +34,21 @@ import FavouritiesContext from "./contexts/favouritesContext";
 
 
   return (
-    <div className={themes.dark===theme.theme ?style.darkMode+' '+style.body:style.body} style={{height:"100%", width:'100%'}}>
+    <div className={`${style.flexBox} ${themes.dark===theme.theme ?style.darkMode+' '+style.body:style.body}`}>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Banner {...bannerConstants} />
+      <div className={style.container}>
+        
+      <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="/details/:id" element={<Home />} />
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    </div>
       <Footer/>
       <Favourites show={isOpen} items={items}/>
     </div>

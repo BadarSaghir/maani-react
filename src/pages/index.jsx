@@ -1,14 +1,11 @@
- import SearchBox from "../components/SearchBox/SearchBox"
- import ProductsPage from "../components/ProductsPage/ProductsPage"
- const  Home=()=>{
-    return (
-        <main >
+import SearchPage from "../components/SearchBox/SearchBox";
 
-<SearchBox />
-<ProductsPage/>
+const Home = () => {
+  return (
+    <main>
+      <SearchPage />
+    </main>
+  );
+};
 
-        </main>
-    )
-}
-
-export default Home
+export default Home;

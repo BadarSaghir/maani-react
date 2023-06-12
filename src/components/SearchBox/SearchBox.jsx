@@ -1,7 +1,7 @@
 import ResultContainer from "./ResultContainer/ResultContainer"
 import SearchBar from "./SearchInput/SearchBar"
 import styles from "./SearchBox.module.css"
-const SearchBox =()=>{
+const SearchPage =()=>{
 
     return <section className={styles['web-topics-page']}>
    <SearchBar/>
@@ -9,4 +9,4 @@ const SearchBox =()=>{
 </section>
 }
 
-export default SearchBox
+export default SearchPage

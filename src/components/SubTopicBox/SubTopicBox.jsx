@@ -1,3 +1,4 @@
+import {FaRegCheckCircle} from "react-icons/fa"
 /* eslint-disable react/prop-types */
 export function SubTopicBox({data}) {
     return <div
@@ -11,10 +12,7 @@ export function SubTopicBox({data}) {
                 </li>
                 {data.subtopics.map((subTopic, idx) => (
                     <li key={idx} className="course-sub-topic">
-                        <ion-icon
-                            class="checkmark"
-                            name="checkmark-circle-outline"
-                        ></ion-icon>{" "}
+                      <FaRegCheckCircle />
                         <h3>{subTopic}</h3>
                     </li>
                 ))}

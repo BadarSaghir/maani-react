@@ -8,7 +8,7 @@ import { HiOutlineMoon } from "react-icons/hi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useState } from "react";
 import { themes } from "../../constant/theme";
-
+import { Link } from "react-router-dom";
 const Navbar = ({isOpen="",setIsOpen=()=>{}}) => {
   const { handleTheme, theme } = useThemeChanger();
   
@@ -20,7 +20,9 @@ const Navbar = ({isOpen="",setIsOpen=()=>{}}) => {
         <div className={`${style.pageModes} `}>
           <div className={`${style.pageTitle} `}>
             <h1 id={`${style.pageTitle} `} tabIndex="0">
-              Web Topics
+          <Link to={"/"}>
+            <a> Web Topics</a>
+           </Link>    
             </h1>
           </div>
 

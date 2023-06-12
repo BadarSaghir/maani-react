@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar/Navbar";
-import style from './App.module.css'
+import style from  './App.module.css'
 import {themes} from "./constant/theme"
 import {bannerConstants} from "./constant/banner"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
@@ -10,8 +10,9 @@ import { Footer } from "./components/Footer/Footer";
 import Favourites from "./components/Favourites/Favourites";
 import FavouritiesContext from "./contexts/favouritesContext";
 import Home from "./pages";
+import Details from "./pages/details";
  const App = () => {
-
+// style.flexBox
  const theme=useContext(ThemeContext)
  const {isOpen,setIsOpen}=useContext(FavouritiesContext)
  const items=[{
@@ -34,24 +35,30 @@ import Home from "./pages";
 
 
   return (
+    <BrowserRouter>
     <div className={`${style.flexBox} ${themes.dark===theme.theme ?style.darkMode+' '+style.body:style.body}`}>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <Banner {...bannerConstants} />
       <div className={style.container}>
         
-      <BrowserRouter>
+      
       <Routes>
         <Route path="/">
-          <Route index element={<Home />} />
-          <Route path="/details/:id" element={<Home />} />
+          <Route index element={  <Home />} />
+        
+          
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="*" element={<div>Not Found</div>} />
 
         </Route>
       </Routes>
-    </BrowserRouter>
+  
     </div>
       <Footer/>
       <Favourites show={isOpen} items={items}/>
     </div>
+
+    </BrowserRouter>
   );
 };
 

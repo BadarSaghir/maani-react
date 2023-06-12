@@ -1,6 +1,11 @@
+ import SearchBox from "../components/SearchBox/SearchBox"
  const  Home=()=>{
     return (
-        <div>Home</div>
+        <>
+
+<SearchBox />
+
+        </>
     )
 }
 

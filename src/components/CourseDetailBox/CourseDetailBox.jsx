@@ -2,10 +2,14 @@
 import style from "./CourseDetailBox.module.css";
 import { StarBox } from "../Rating/StarBox";
 import RatingStar from "../Rating/RatingStar";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import { FAVOURITE_KEY } from "../../constant/favourties";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import FavouritiesContext from "../../contexts/favouritesContext";
+
 export function CourseDetailBox({ data }) {
+    const {setfavourities}=useContext(FavouritiesContext)
+
   const [items, setItems] = useState([
     {
       id: -1,
@@ -27,6 +31,8 @@ export function CourseDetailBox({ data }) {
 
   function handleFavourite() {
     if (items.findIndex((element) => element.id === data.id) == -1) {
+        setfavourities(data.topic)
+
       const oldItems = JSON.parse(localStorage.getItem(FAVOURITE_KEY));
       const newItem = {
         id: data.id,
@@ -41,6 +47,12 @@ export function CourseDetailBox({ data }) {
       const pustItems = [...oldItems, newItem];
       localStorage.setItem(FAVOURITE_KEY, JSON.stringify(pustItems));
       setItems(pustItems);
+    }else{
+      const newItems= items.splice(items.findIndex((element) => element.id === data.id), 1);
+      localStorage.setItem(FAVOURITE_KEY, JSON.stringify(newItems));
+      setfavourities("")
+      setItems(newItems);
+
     }
 
     // {? <AiFillHeart/>:<AiOutlineHeart/>}

@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import { themes} from "../constant/theme";
 import PropTypes from "prop-types";
 
 /**
@@ -13,7 +12,7 @@ export const FavouritiesContext = createContext();
  *
  */
 export function FavouritiesContextProvider({ children }) {
-  const [favourities,setfavourities]=useState(themes.light)
+  const [favourities,setfavourities]=useState("")
   const [isOpen,setIsOpen]=useState(false)
 
   return (

@@ -15,21 +15,21 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import { FAVOURITE_KEY, favDumyStringifyItems} from "./constant/favourties";
+import { FAVOURITE_KEY,} from "./constant/favourties";
 import { useState } from "react";
  const App = () => {
   const queryClient = new QueryClient()
   
 // style.flexBox
  const theme=useContext(ThemeContext)
- const {isOpen,setIsOpen}=useContext(FavouritiesContext)
+ const {isOpen,setIsOpen,favourities}=useContext(FavouritiesContext)
 const [items,setItems]=useState([])
 useEffect(()=>{
   const _items= localStorage.getItem(FAVOURITE_KEY)
   if(_items){
     setItems(JSON.parse(_items))
   }
-},[])
+},[isOpen,favourities])
 
   return (
     <QueryClientProvider client={queryClient}>

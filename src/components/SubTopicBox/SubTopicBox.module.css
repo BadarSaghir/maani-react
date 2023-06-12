@@ -271,3 +271,43 @@ Media queries
     
 
 }
+
+
+
+
+@media(min-width: 760px) and (max-width: 767px){
+
+    .course-sub-topics{
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .details-page-sub-topics-container{
+        width: 52% !important;
+        padding-inline-end: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .course-sub-topics-list{
+        margin-bottom: 0;
+    }
+
+    .course-sub-topic h3{
+        width:91% ;
+    }
+
+    .course-sub-topic .checkmark{
+        font-size: 1.5rem;
+        width: 9%;
+    }
+    .course-sub-topics{
+        width: 100%;
+        margin-top: 0;
+    }
+    .details-page-container{
+        padding: 35px;
+        width: 100%;
+    }
+    
+
+}

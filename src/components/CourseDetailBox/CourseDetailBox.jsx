@@ -1,58 +1,91 @@
 /* eslint-disable react/prop-types */
-
+import style from "./CourseDetailBox.module.css"
+import {StarBox} from "../Rating/StarBox"
+import RatingStar from "../Rating/RatingStar"
 export function CourseDetailBox({data}) {
-    return <div id="course-details-box" className="course-details-box">
+    return <div id="course-details-box" className={`${style["course-details-box"]}`}
+>
         <div
             id="course-details-box-container"
-            className="details-page-container"
+            className={`${style["details-page-container"]}`}
+
         >
-            <div className="course-details">
+            <div className={`${style["course-details"]}`}
+>
                 <h4>{data.category}</h4>
                 <h5>{data.topic}</h5>
-                <div className="star-rating-box">
-                    <div className="star-border">
-                        <div className="second-level-star"></div>
+                {/* <div className={`${style["star-rating-box"]}`}
+>
+                    <div className={`${style["star-border"]}`}
+>
+                        <div className={`${style["second-level-star"]}`}
+></div>
                     </div>
-                    <div className="star-border">
-                        <div className="second-level-star"></div>
+                    <div className={`${style["star-border"]}`}
+>
+                        <div className={`${style["second-level-star"]}`}
+></div>
                     </div>
-                    <div className="star-border">
-                        <div className="second-level-star"></div>
+                    <div className={`${style["star-border"]}`}
+>
+                        <div className={`${style["second-level-star"]}`}
+></div>
                     </div>
-                    <div className="star-border">
-                        <div className="second-level-star"></div>
+                    <div className={`${style["star-border"]}`}
+>
+                        <div className={`${style["second-level-star"]}`}
+></div>
                     </div>
-                    <div className="star-border">
-                        <div className="second-level-star">
+                    <div className={`${style["star-border"]}`}
+>
+                        <div className={`${style["second-level-star"]}`}
+>
                             <div
                                 id="details-page-star-color-fill"
-                                className="star-color-fill"
+                                className={`${style["star-color-fill"]}`}
+
                             ></div>
                         </div>
                     </div>
-                </div>
+                </div> */}
+                <StarBox>
+                {Array.from(Array(5), (_, i) => {
+            // console.log('index',i,i<startRating);
+            //1>2>3>4>5
+            return (
+              <RatingStar key={i} isNotRatted={i < data.rating?false:true} />
+            );
+          })}
+                </StarBox>
+                
                 <p id="course-details-para">{data.description}</p>
             </div>
             <div
                 id="details-page-card-contianer"
-                className="details-page-card-contianer"
+                className={`${style["details-page-card-contianer"]}`}
+
             >
-                <div id="details-page-card" className="details-page-card">
-                    <div className="details-page-card-thumbnail">
+                <div id="details-page-card" className={`${style["details-page-card"]}`}
+>
+                    <div className={`${style["details-page-card-thumbnail"]}`}
+>
                         <img
-                            src="../images/topics-thumbnails/javascript.jpg"
+                            src={`../images/topics-thumbnails/${data.image}`}
                             alt="html course" />
                     </div>
-                    <div className="details-page-card-custom-container">
+                    <div className={`${style["details-page-card-custom-container"]}`}
+>
                         <h4>
                             <span>HTML</span> by <a href="/">{data.name}</a>
                         </h4>
                         <div
                             id="add-to-favourites-box"
-                            className="add-to-favourites-box"
+                            className={`${style["add-to-favourites-box"]}`}
+
                         >
                             <p>Interested about this topic?</p>
-                            <button type="button" className="rounded-0">
+                            <button type="button" className={`${style["rounded-0"]}`}
+>
                                 Add to Favourites{" "}
                                 <ion-icon
                                     id="details-page-heart"

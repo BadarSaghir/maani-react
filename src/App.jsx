@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import style from  './App.module.css'
 import {themes} from "./constant/theme"
 import {bannerConstants} from "./constant/banner"
-import {Routes,Route,useLocation} from "react-router-dom"
+import {Routes,Route} from "react-router-dom"
 import { useContext, useEffect } from "react";
 import {ThemeContext} from "./contexts/themeContext"
 import Banner from "./components/Banner/Banner";
@@ -16,7 +16,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import { FAVOURITE_KEY,} from "./constant/favourties";
-import {CSSTransition,TransitionGroup} from "react-transition-group"
+// import {CSSTransition,TransitionGroup} from "react-transition-group"
 
 import { useState } from "react";
  const App = () => {
@@ -32,7 +32,6 @@ useEffect(()=>{
     setItems(JSON.parse(_items))
   }
 },[isOpen,favourities])
-const location = useLocation();
 
   return (
     <QueryClientProvider client={queryClient}>

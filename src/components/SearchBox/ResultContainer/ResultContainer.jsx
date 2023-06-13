@@ -7,10 +7,12 @@ import ProductsPage from "./ProductsPage/ProductsPage"
  * @returns 
  */
 const ResultContainer =({data,found="Web Topics Found",sortBy="", filterBy=""})=>{
+    const resultLength=data.filter((data)=>data.category.toLowerCase().includes(filterBy.toLowerCase())).length
+
 
     return <div className={`${style['container']}  ${style["main-custom-container"]}`}>
         <h3 id="number-of-topics-found">
-        &quot;{data.length}&quot; {found}</h3>
+        &quot;{resultLength}&quot; {found}</h3>
         <div className={`${style["web-topics-box-parent"]}`}>
             <div id="web-topics" className={`${style["web-topics"]}`}> 
             {/* {found} */}

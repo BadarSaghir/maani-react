@@ -152,11 +152,17 @@
 
 @media(max-width: 440px){
 
-
+   
     .details-page-container{
         padding: 15px;
         width: 100%;
     } 
+    .details-page-container
+    {
+
+        display: flex;
+        flex-direction: column;
+    }
     .details-page-card-contianer{
         position: static !important;
         margin: auto;
@@ -199,6 +205,12 @@
     .details-page-container{
         padding: 20px;
         width: 100%;
+    }
+    .details-page-container
+    {
+
+        display: flex;
+        flex-direction: column;
     }
 
     /* .course-details-box-container{
@@ -416,7 +428,6 @@
 
 @media(min-width: 768px) and (max-width: 799px){
 
-    /////////////////////////////////////////// */
 
     .details-page-container{
         padding: 35px;
@@ -460,4 +471,15 @@
     }
   
 
+}
+
+
+@media(max-width: 792px){
+  
+    .details-page-container
+    {
+
+        display: flex;
+        flex-direction: column;
+    }
 }

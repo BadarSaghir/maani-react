@@ -68,40 +68,7 @@ export function CourseDetailBox({ data }) {
         <div className={`${style["course-details"]}`}>
           <h4>{data.category}</h4>
           <h5>{data.topic}</h5>
-          {/* <div className={`${style["star-rating-box"]}`}
->
-                    <div className={`${style["star-border"]}`}
->
-                        <div className={`${style["second-level-star"]}`}
-></div>
-                    </div>
-                    <div className={`${style["star-border"]}`}
->
-                        <div className={`${style["second-level-star"]}`}
-></div>
-                    </div>
-                    <div className={`${style["star-border"]}`}
->
-                        <div className={`${style["second-level-star"]}`}
-></div>
-                    </div>
-                    <div className={`${style["star-border"]}`}
->
-                        <div className={`${style["second-level-star"]}`}
-></div>
-                    </div>
-                    <div className={`${style["star-border"]}`}
->
-                        <div className={`${style["second-level-star"]}`}
->
-                            <div
-                                id="details-page-star-color-fill"
-                                className={`${style["star-color-fill"]}`}
-
-                            ></div>
-                        </div>
-                    </div>
-                </div> */}
+          
           <StarBox>
             {Array.from(Array(5), (_, i) => {
               // console.log('index',i,i<startRating);
